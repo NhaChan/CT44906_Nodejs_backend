@@ -39,6 +39,7 @@ class ContactService {
         );
         return contact;
     }
+
     async create(payload) {
         const contact = this.extractConactData(payload);
         const result = await this.Contact.findOneAndUpdate(
@@ -65,6 +66,7 @@ class ContactService {
             _id: ObjectId.isValid(id) ? new ObjectId(id) : null,
         });
     }
+    
     async update(id, payload) {
         const filter = {
             _id: ObjectId.isValid(id) ? new ObjectId(id) : null,
